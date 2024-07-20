@@ -10,7 +10,6 @@ const gltfLoader = new GLTFLoader();
 const cubeTextureLoader = new THREE.CubeTextureLoader();
 
 
-
 /**
  * Base
  */
@@ -110,8 +109,7 @@ const sizes = {
     height: window.innerHeight
 }
 
-window.addEventListener('resize', () =>
-{
+window.addEventListener('resize', () => {
     // Update sizes
     sizes.width = window.innerWidth
     sizes.height = window.innerHeight
@@ -160,17 +158,16 @@ gui.add(renderer, 'toneMapping', {
     Cineon: THREE.CineonToneMapping,
     ACESFilmic: THREE.ACESFilmicToneMapping
 })
-.onFinishChange(() => {
-    renderer.toneMapping = Number(renderer.toneMapping);
-    updateAllMaterials();
-})
+    .onFinishChange(() => {
+        renderer.toneMapping = Number(renderer.toneMapping);
+        updateAllMaterials();
+    })
 gui.add(renderer, 'toneMappingExposure').min(0).max(10).step(0.001);
 
 /**
  * Animate
  */
-const tick = () =>
-{
+const tick = () => {
     // Update controls
     controls.update()
 
