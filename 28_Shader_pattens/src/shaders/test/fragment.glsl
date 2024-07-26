@@ -267,7 +267,7 @@ void main(){
     // float strength = 1.0 - step(0.01, abs(distance(vUv, vec2(0.5)) - radius));
 
     // patten 46
-    // float strength = cnoise(vUv * 10.0);
+    float strength = cnoise(vUv * 10.0);
 
     // patten 47
     // float strength = step(0.0, cnoise(vUv * 10.0));
@@ -276,7 +276,7 @@ void main(){
     // float strength = 1.0 -  abs(cnoise(vUv * 10.0));
 
     // patten 49
-    float strength = step(0.9, sin(cnoise(vUv * 10.0) * 20.0));
+    // float strength = step(0.9, sin(cnoise(vUv * 10.0) * 20.0));
 
     // Clamp the strength
     strength = clamp(strength, 0.0, 1.0);
